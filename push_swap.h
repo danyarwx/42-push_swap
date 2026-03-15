@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/01 13:13:52 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/01 13:45:26 by dzhukov          ###   ########.fr       */
+/*   Created: 2026/03/01 13:20:33 by dzhukov           #+#    #+#             */
+/*   Updated: 2026/03/01 13:32:58 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-int main(int argc, char **argv)
-{
-	char	**array=NULL;
+# include "./ft_printf/include/ft_printf.h"
 
-	if (argc == 1)
-		return 1;
+int	main(int argc, char **argv);
 
-	array = ft_split(argv[1], ' ');
 
-	int i = 0;
-	int j = 0;
-	while (i < 5)
-	{
-		ft_printf("%s\n", array[i]);
-		i++;
-	}
-	ft_free(array, 5);
 
-	return (0);
-}
-
+#endif
