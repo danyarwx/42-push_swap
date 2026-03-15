@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:13:52 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 00:01:28 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 00:45:56 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char **argv)
 		return (1);
 	else if (argc == 2)
 		argv = ft_split(argv[1], ' ');
-	make_stack(&a, argv + 1);
+	make_stack(&a, argv + 1, argc == 2);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)

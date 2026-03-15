@@ -6,13 +6,13 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 23:32:47 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 00:35:14 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 01:08:16 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_atol(const char *str)
+long	ft_atol(const char *str)
 {
 	long	res;
 	int		sign;
@@ -37,19 +37,23 @@ static long	ft_atol(const char *str)
 	return (res * sign);
 }
 
-void make_stack(t_stack **a, char **argv)
+void make_stack(t_stack **a, char **argv, bool fake)
 {
 	long num;
+	int	i;
 
-	while (*argv)
+	i = 0;
+	while (argv[i])
 	{
+		if (syntax_fail(argv[i]))
+			fail_free(a, argv, fake);
 		num = ft_atol(*argv);
 		if (num  > INT_MAX || num < INT_MIN)
-			//fail_free(a, argv);
-		else if (repetition(*a, int(num)))
-			//fail_free(a, argv);
+			fail_free(a, argv, fake);
+		if (rep_fail(*a, (int)num))
+			fail_free(a, argv, fake);
 		add_node(a, (int)num);
-		argv++;
+		i++;
 	}
 }
 
