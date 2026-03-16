@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 23:32:47 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 14:32:18 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 17:36:16 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,15 +57,6 @@ void make_stack(t_stack **a, char **argv, bool fake)
 	}
 	if (fake)
 		free_arr(a);
-}
-
-t_stack	*find_last(t_stack *head)
-{
-	if (NULL == head)
-		return (NULL);
-	while (head->next)
-		head = head->next;
-	return (head);
 }
 
 void add_node(t_stack **stack, int num)

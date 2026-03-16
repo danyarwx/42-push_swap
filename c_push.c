@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 16:00:16 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 16:20:06 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 17:27:16 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,16 @@ void	push(t_stack **src, t_stack **dest)
 }
 
 // Confusing order might fix it later
-void	pa(t_stack **a, t_stack **b, bool print)
+void	pa(t_stack **a, t_stack **b, bool print) // push to a from b
 {
-	push(b, a);
+	push(b, a); // push from b to a
 	if (print)
 		ft_printf("pa\n");
 }
 
-void	pb(t_stack **b, t_stack **a, bool print)
+void	pb(t_stack **b, t_stack **a, bool print) // push to b from a
 {
-	push(a, b);
+	push(a, b); // push from a to b
 	if (print)
 		ft_printf("pb\n");
 }

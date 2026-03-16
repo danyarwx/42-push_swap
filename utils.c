@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 15:06:53 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 15:36:58 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 17:36:21 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,13 @@ int	stack_len(t_stack *stack)
 		i++;
 	}
 	return (i);
+}
+
+t_stack	*find_last(t_stack *head)
+{
+	if (NULL == head)
+		return (NULL);
+	while (head->next)
+		head = head->next;
+	return (head);
 }
