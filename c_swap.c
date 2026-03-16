@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 14:37:01 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 15:36:59 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 15:59:44 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ void	swap(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
-	int		size;
 
-	size = stack_len(*stack);
-	if (!stack || !*stack || size < 2)
+	if (!stack || !*stack || stack_len(*stack) < 2)
 		return ;
 	first = *stack;
 	second = first->next;
@@ -30,4 +28,26 @@ void	swap(t_stack **stack)
 	second->next = first;
 	first->prev = second;
 	*stack = second;
+}
+
+void	sa(t_stack **a, bool print)
+{
+	swap(a);
+	if(print)
+		ft_printf("sa\n");
+}
+
+void	sb(t_stack **b, bool print)
+{
+	swap(b);
+	if(print)
+		ft_printf("sb\n");
+}
+
+void	ss(t_stack **a, t_stack **b, bool print)
+{
+	swap(a);
+	swap(b);
+	if(print)
+		ft_printf("ss\n");
 }

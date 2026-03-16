@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 00:53:29 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 01:04:51 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 15:50:48 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ int	syntax_fail(char *str)
 	}
 	return (0);
 }
+
+// Display error when there are duplicates
 int	rep_fail(t_stack *a, int num)
 {
 	if (NULL == a)
