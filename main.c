@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:13:52 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 15:06:04 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 18:09:17 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) == 2)
-			swap(&a, false);
+			swap(&a);
 		else if (stack_len == 3)
 			sort_three(&a);
 		else
