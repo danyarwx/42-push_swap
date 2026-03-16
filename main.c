@@ -6,16 +6,16 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:13:52 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 00:45:56 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 15:06:04 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 
 	a = NULL;
 	b = NULL;
@@ -34,16 +34,10 @@ int main(int argc, char **argv)
 			push_swap(&a, &b);
 	}
 	free_stack(&a);
-
-
-
 	// char	**array=NULL;
-
 	// if (argc == 1)
-	// 	return 1;
-
+	// 	return (1);
 	// array = ft_split(argv[1], ' ');
-
 	// int i = 0;
 	// int j = 0;
 	// while (i < 5)
@@ -52,7 +46,5 @@ int main(int argc, char **argv)
 	// 	i++;
 	// }
 	// ft_free(array, 5);
-
 	return (0);
 }
-

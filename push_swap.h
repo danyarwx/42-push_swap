@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:20:33 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 01:07:24 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/16 14:27:01 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <limits.h>
 # include <stdbool.h>
 # include <stdlib.h>
-
 
 typedef struct s_stack
 {
