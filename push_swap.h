@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:20:33 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 18:07:31 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/25 22:42:28 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,16 @@
 
 typedef struct s_stack
 {
-	int value;
-	int index;
+	int				value;
+	int				index;
+	int				current_position;
+	int				push_price;
+	bool			above_median;
+	bool			cheapest;
 
-	struct s_stack *target_node;
-	struct s_stack *next;
-	struct s_stack *prev;
+	struct s_stack	*target_node;
+	struct s_stack	*next;
+	struct s_stack	*prev;
 }	t_stack;
 
 int		main(int argc, char **argv);
@@ -72,5 +76,22 @@ void	rrr(t_stack **a, t_stack **b, bool print);
 void	tiny_sort(t_stack **a, t_stack **b);
 void	sort_three(t_stack **a);
 void	push_swap(t_stack **a, t_stack **b);
+
+// Push_Swap
+void	prep_nodes(t_stack *a, t_stack *b);
+
+t_stack	*get_cheapest(t_stack *stack);
+void	set_pos(t_stack *stack);
+void	set_targets(t_stack *a, t_stack *b);
+void	set_costs(t_stack *a, t_stack *b);
+void	mark_cheapest(t_stack *b);
+
+void	rot_both(t_stack **a, t_stack **b, t_stack *cheap);
+void	rev_rot_both(t_stack **a, t_stack **b, t_stack *cheap);
+void	finish_rot(t_stack **stack, t_stack *top_node, char name);
+void	push_best(t_stack **a, t_stack **b);
+void	top_min(t_stack **a);
+
+
 
 #endif
