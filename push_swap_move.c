@@ -6,14 +6,13 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/25 22:28:22 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/25 23:00:35 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/25 23:04:07 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Rotate both stacks together while both needed nodes are below the top.
-
 void	rot_both(t_stack **a, t_stack **b, t_stack *cheap)
 {
 	while (*a != cheap->target_node && *b != cheap)
@@ -23,7 +22,6 @@ void	rot_both(t_stack **a, t_stack **b, t_stack *cheap)
 }
 
 // Reverse rotate both stacks together when both nodes are in the bottom half.
-
 void	rev_rot_both(t_stack **a, t_stack **b, t_stack *cheap)
 {
 	while (*a != cheap->target_node && *b != cheap)
@@ -33,7 +31,6 @@ void	rev_rot_both(t_stack **a, t_stack **b, t_stack *cheap)
 }
 
 // Finish rotating one stack until the wanted node reaches the top.
-
 void	finish_rot(t_stack **stack, t_stack *top_node, char name)
 {
 	while (*stack != top_node)
@@ -56,7 +53,6 @@ void	finish_rot(t_stack **stack, t_stack *top_node, char name)
 }
 
 // Bring the cheapest node in b and its target in a to the top, then push it.
-
 void	push_best(t_stack **a, t_stack **b)
 {
 	t_stack	*cheap;
@@ -74,7 +70,6 @@ void	push_best(t_stack **a, t_stack **b)
 }
 
 // Rotate a until the smallest value becomes the top node.
-
 void	top_min(t_stack **a)
 {
 	t_stack	*smallest;
