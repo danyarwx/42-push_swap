@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:13:52 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/25 20:42:45 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/25 22:34:14 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,9 @@ int	main(int argc, char **argv)
 	{
 		if (stack_len(a) <= 5)
 			tiny_sort(&a, &b);
-		// else
-		// 	push_swap(&a, &b);
+		else
+			push_swap(&a, &b);
 	}
 	free_stack(&a);
-	// char	**array=NULL;
-	// if (argc == 1)
-	// 	return (1);
-	// array = ft_split(argv[1], ' ');
-	// int i = 0;
-	// int j = 0;
-	// while (i < 5)
-	// {
-	// 	ft_printf("%s\n", array[i]);
-	// 	i++;
-	// }
-	// ft_free(array, 5);
 	return (0);
 }
