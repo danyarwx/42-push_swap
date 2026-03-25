@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 13:13:52 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 18:09:17 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/25 20:42:45 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ int	main(int argc, char **argv)
 	make_stack(&a, argv + 1, argc == 2);
 	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2)
-			swap(&a);
-		else if (stack_len == 3)
-			sort_three(&a);
-		else
-			push_swap(&a, &b);
+		if (stack_len(a) <= 5)
+			tiny_sort(&a, &b);
+		// else
+		// 	push_swap(&a, &b);
 	}
 	free_stack(&a);
 	// char	**array=NULL;

@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 15:06:53 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 17:36:21 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/25 20:24:35 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,4 +34,33 @@ t_stack	*find_last(t_stack *head)
 	while (head->next)
 		head = head->next;
 	return (head);
+}
+
+int	stack_sorted(t_stack *stack)
+{
+	if (!stack)
+		return (1);
+	while (stack->next)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+t_stack	*find_min(t_stack *stack)
+{
+	t_stack	*min;
+
+	if (!stack)
+		return (NULL);
+	min = stack;
+	while (stack)
+	{
+		if (stack->value < min->value)
+			min = stack;
+		stack = stack->next;
+	}
+	return (min);
 }

@@ -44,7 +44,9 @@ int		rep_fail(t_stack *a, int num);
 
 // Utils
 int		stack_len(t_stack *stack);
+int		stack_sorted(t_stack *stack);
 t_stack	*find_last(t_stack *head);
+t_stack	*find_min(t_stack *stack);
 
 // Commands
 void	push(t_stack **src, t_stack **dest);
@@ -66,5 +68,9 @@ void	rra(t_stack **a, bool print);
 void	rrb(t_stack **b, bool print);
 void	rrr(t_stack **a, t_stack **b, bool print);
 
+// Sorting
+void	tiny_sort(t_stack **a, t_stack **b);
+void	sort_three(t_stack **a);
+void	push_swap(t_stack **a, t_stack **b);
 
 #endif

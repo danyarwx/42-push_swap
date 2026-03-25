@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/15 23:32:47 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 17:36:16 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/25 20:49:12 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void make_stack(t_stack **a, char **argv, bool fake)
 	{
 		if (syntax_fail(argv[i]))
 			fail_free(a, argv, fake);
-		num = ft_atol(*argv);
+		num = ft_atol(argv[i]);
 		if (num  > INT_MAX || num < INT_MIN)
 			fail_free(a, argv, fake);
 		if (rep_fail(*a, (int)num))
@@ -56,7 +56,7 @@ void make_stack(t_stack **a, char **argv, bool fake)
 		i++;
 	}
 	if (fake)
-		free_arr(a);
+		free_arr(argv);
 }
 
 void add_node(t_stack **stack, int num)
