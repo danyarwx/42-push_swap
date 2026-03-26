@@ -11,7 +11,7 @@ INCLUDES	= -I. -I$(PRINTF_DIR)/include
 
 SRCS		= main.c				\
 			  parsing.c				\
-			  split.c				\
+			  ft_split.c				\
 			  errors.c				\
 			  utils.c				\
 			  tiny_sort.c			\
