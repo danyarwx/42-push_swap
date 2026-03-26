@@ -5,12 +5,13 @@ CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -f
 
 PRINTF_DIR	= ft_printf
-PRINTF		= $(PRINTF_DIR)/libftprintf.a
+PRINTF		= $(PRINTF_DIR)/ft_printf.a
 
 INCLUDES	= -I. -I$(PRINTF_DIR)/include
 
 SRCS		= main.c				\
 			  parsing.c				\
+			  split.c				\
 			  errors.c				\
 			  utils.c				\
 			  tiny_sort.c			\

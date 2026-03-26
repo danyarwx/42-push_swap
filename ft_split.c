@@ -6,13 +6,13 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 10:52:48 by dzhukov           #+#    #+#             */
-/*   Updated: 2025/10/27 12:14:30 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/26 23:20:21 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-size_t	ft_count_words(const char *str, char del)
+static size_t	ft_count_words(const char *str, char del)
 {
 	size_t	i;
 	size_t	count;
@@ -28,7 +28,7 @@ size_t	ft_count_words(const char *str, char del)
 	return (count);
 }
 
-void	*ft_free(char **arr, size_t index)
+static void	*ft_free(char **arr, size_t index)
 {
 	size_t	i;
 
@@ -37,6 +37,41 @@ void	*ft_free(char **arr, size_t index)
 		free(arr[i++]);
 	free(arr);
 	return (NULL);
+}
+
+static char	*dup_part(char const *s, size_t len)
+{
+	char	*ptr;
+	size_t	i;
+
+	ptr = malloc(len + 1);
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		ptr[i] = s[i];
+		i++;
+	}
+	ptr[i] = '\0';
+	return (ptr);
+}
+
+static void	*ft_calloc(size_t nmemb, size_t size)
+{
+	unsigned char	*ptr;
+	size_t			i;
+
+	ptr = (unsigned char *)malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < nmemb * size)
+	{
+		ptr[i] = 0;
+		i++;
+	}
+	return (ptr);
 }
 
 char	**ft_split(char const *s, char c)
@@ -58,7 +93,7 @@ char	**ft_split(char const *s, char c)
 			s++;
 		while (s[j] && (s[j] != c))
 			j++;
-		arr[i] = ft_substr(s, 0, j);
+		arr[i] = dup_part(s, j);
 		if (!arr[i])
 			return (ft_free(arr, i));
 		i++;

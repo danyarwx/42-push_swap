@@ -6,11 +6,10 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 20:16:33 by dzhukov           #+#    #+#             */
-/*   Updated: 2025/11/02 19:32:56 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/26 23:12:47 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/libft.h"
 #include "ft_printf.h"
 
 int	ft_switch(char c, va_list *p_args)
@@ -66,23 +65,3 @@ int	ft_printf(const char *s, ...)
 	}
 	return (va_end(args), total);
 }
-
-// #include <stdio.h>
-
-// int	main(void)
-// {
-// 	unsigned int	n;
-// 	void * ptr;
-// 	char			str[] = "hello world";
-// 	int result;
-
-// 	n = 0;
-// 	ptr = &n;
-
-// 	printf("The printf result is : %x\n", n);
-// 	// printf("The printf result is : %X\n", n);
-// 	result = ft_printf("My result is : %x\n", n);
-// 	// ft_printf("My result is : %X\n", n);
-// 	ft_printf("Function printed %d characters.", result);
-// 	return (0);
-// }

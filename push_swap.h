@@ -36,6 +36,7 @@ int		main(int argc, char **argv);
 
 // Parsing
 long	ft_atol(const char *str);
+char	**ft_split(char const *s, char c);
 void	make_stack(t_stack **a, char **argv, bool fake);
 void 	add_node(t_stack **stack, int num);
 
