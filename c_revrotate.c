@@ -6,7 +6,7 @@
 /*   By: dzhukov <dzhukov@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/16 17:45:19 by dzhukov           #+#    #+#             */
-/*   Updated: 2026/03/16 17:53:25 by dzhukov          ###   ########.fr       */
+/*   Updated: 2026/03/26 19:40:56 by dzhukov          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	revrotate(t_stack **stack)
 {
-	t_stack *first;
 	t_stack *last;
 
 	if (!stack || !*stack || stack_len(*stack) < 2)
