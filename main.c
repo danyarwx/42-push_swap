@@ -22,8 +22,12 @@ int	main(int argc, char **argv)
 	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
+	{
 		argv = ft_split(argv[1], ' ');
-	make_stack(&a, argv + 1, argc == 2);
+		make_stack(&a, argv, true);
+	}
+	else
+		make_stack(&a, argv + 1, false);
 	if (!stack_sorted(a))
 	{
 		if (stack_len(a) <= 5)

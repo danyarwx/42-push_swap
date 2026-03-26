@@ -25,12 +25,15 @@ void	free_arr(char **argv)
 {
 	int	i;
 
-	i = -1;
-	if (NULL == argv || NULL == *argv)
+	i = 0;
+	if (NULL == argv)
 		return ;
 	while (argv[i])
-		free(argv[i++]);
-	free(argv - 1);
+	{
+		free(argv[i]);
+		i++;
+	}
+	free(argv);
 }
 
 void	free_stack(t_stack **stack)
